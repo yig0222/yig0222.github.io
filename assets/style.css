@@ -1,0 +1,83 @@
+/* ===== Ingyu Yoo — personal site. Achromatic, quiet, editorial. ===== */
+:root{
+  --ink:#1a1a1a; --body:#2e2e2e; --muted:#6b6b6b; --faint:#8c8c8c;
+  --line:#e4e4e4; --line-strong:#cfcfcf; --bg:#ffffff; --bg-alt:#f7f7f6;
+  --max:760px;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--body);font-family:var(--sans);font-size:16px;line-height:1.68;letter-spacing:.005em;-webkit-font-smoothing:antialiased}
+a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line-strong);transition:border-color .15s,color .15s}
+a:hover{border-color:var(--ink)}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
+.section{padding:34px 0;border-top:1px solid var(--line)}
+.section:first-of-type{border-top:none}
+header.nav{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);backdrop-filter:saturate(180%) blur(8px);border-bottom:1px solid var(--line)}
+.nav-inner{max-width:var(--max);margin:0 auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:700;color:var(--ink);letter-spacing:.04em;border:none;font-size:15px;text-transform:uppercase}
+.menu{display:flex;gap:22px;align-items:center}
+.menu a{border:none;color:var(--muted);font-size:14px;letter-spacing:.03em;padding:4px 0;position:relative}
+.menu a:hover{color:var(--ink)}
+.menu a.active{color:var(--ink)}
+.menu a.active::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:1.5px;background:var(--ink)}
+.menu a.cv{border:1px solid var(--line-strong);border-radius:2px;padding:5px 11px;color:var(--ink)}
+.menu a.cv:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+.hero{padding:60px 0 30px}
+.hero h1{font-size:40px;line-height:1.12;margin:0;color:var(--ink);font-weight:700;letter-spacing:-.01em}
+.hero .role{margin:10px 0 0;color:var(--muted);font-size:17px;letter-spacing:.04em}
+.hero .meta{margin:18px 0 0;color:var(--faint);font-size:14px}
+.hero .meta a{border:none;color:var(--muted)}
+.hero .meta a:hover{color:var(--ink)}
+h2.head{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700;margin:0 0 18px;display:flex;align-items:center;gap:14px}
+h2.head::after{content:"";flex:1;height:1px;background:var(--line)}
+h3{font-size:17px;margin:0 0 2px;color:var(--ink);font-weight:600;letter-spacing:.005em}
+p{margin:0 0 14px}
+.lead{font-size:17px;color:var(--body);line-height:1.7}
+.entry{padding:14px 0;border-top:1px solid var(--line)}
+.entry:first-child{border-top:none}
+.entry .top{display:flex;justify-content:space-between;gap:18px;align-items:baseline;flex-wrap:wrap}
+.entry .date{color:var(--faint);font-size:13.5px;white-space:nowrap;font-variant-numeric:tabular-nums}
+.entry .sub{color:var(--muted);font-size:14.5px;margin-top:2px}
+.entry p.desc{color:var(--body);font-size:15px;margin:8px 0 0;line-height:1.66}
+.card{padding:20px 0;border-top:1px solid var(--line)}
+.card:first-child{border-top:none}
+.card .num{color:var(--faint);font-size:13px;letter-spacing:.1em;text-transform:uppercase}
+.card h3{margin:6px 0 6px}
+.card p{font-size:15px;color:var(--body);margin:0}
+ol.pub{list-style:none;counter-reset:p;margin:0;padding:0}
+ol.pub li{counter-increment:p;position:relative;padding:14px 0 14px 38px;border-top:1px solid var(--line);font-size:15px;line-height:1.6}
+ol.pub li:first-child{border-top:none}
+ol.pub li::before{content:counter(p);position:absolute;left:0;top:14px;width:24px;height:24px;border:1px solid var(--line-strong);border-radius:50%;text-align:center;line-height:23px;font-size:12px;color:var(--muted)}
+ul.plain{list-style:none;margin:0;padding:0}
+ul.plain li{padding:11px 0;border-top:1px solid var(--line);font-size:15px;line-height:1.6}
+ul.plain li:first-child{border-top:none}
+.me{font-weight:700;color:var(--ink)}
+.tag{display:inline-block;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line-strong);border-radius:2px;padding:1px 7px;margin-right:8px;vertical-align:1px}
+.venue{color:var(--muted)}
+.subhead{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);font-weight:700;margin:26px 0 10px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 0}
+.chip{font-size:13px;color:var(--body);border:1px solid var(--line-strong);border-radius:2px;padding:4px 10px;background:var(--bg-alt)}
+footer{border-top:1px solid var(--line);margin-top:20px;padding:30px 0;color:var(--faint);font-size:13px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+footer a{border:none;color:var(--muted)}
+footer a:hover{color:var(--ink)}
+@media(max-width:600px){
+  .hero h1{font-size:32px}
+  .menu{gap:14px}.menu a{font-size:13px}
+  .nav-inner,.wrap{padding:0 18px}
+  .entry .top{flex-direction:column;gap:2px}
+}
+
+/* nested sub-lists & sub-notes */
+ul.sub{list-style:none;margin:6px 0 2px;padding:0}
+ul.sub li{border:none;padding:3px 0 3px 18px;font-size:14px;color:var(--muted);position:relative;line-height:1.55}
+ul.sub li::before{content:"·";position:absolute;left:4px;color:var(--faint)}
+.subnote{margin:8px 0 0;padding:8px 0 2px 16px;border-left:1px solid var(--line);font-size:13.5px;color:var(--muted);line-height:1.6}
+
+/* TA section: section title with right-aligned date on the same line */
+.head-row{display:flex;align-items:center;gap:14px;margin:0 0 18px}
+.head-row .t{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700;white-space:nowrap}
+.head-row .rule{flex:1;height:1px;background:var(--line)}
+.head-row .d{color:var(--faint);font-size:13px;white-space:nowrap;font-variant-numeric:tabular-nums}
+.ta-do{display:block;color:var(--muted);font-size:14px;line-height:1.55;margin-top:3px}
