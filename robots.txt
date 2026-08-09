@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://yig0222.github.io/sitemap.xml
