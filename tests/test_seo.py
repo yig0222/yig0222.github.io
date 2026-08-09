@@ -72,16 +72,22 @@ def body_fragment(document):
 
 
 class SeoMetadataTests(unittest.TestCase):
-    def test_metadata(self):
-        for filename, expected_url in PAGES.items():
+    def assert_page_metadata(self, filename, expected_url):
+        document = parse_document(filename)
+        self.assertEqual(document.canonical, expected_url)
+        self.assertEqual(document.meta.get("og:url"), expected_url)
+        self.assertEqual(document.meta.get("og:type"), "website")
+        self.assertEqual(document.meta.get("og:site_name"), "Ingyu Yoo")
+        self.assertTrue(document.meta.get("og:title"))
+        self.assertTrue(document.meta.get("og:description"))
+
+    def test_homepage_metadata(self):
+        self.assert_page_metadata("index.html", PAGES["index.html"])
+
+    def test_topic_page_metadata(self):
+        for filename in ("research.html", "publications.html", "teaching.html"):
             with self.subTest(filename=filename):
-                document = parse_document(filename)
-                self.assertEqual(document.canonical, expected_url)
-                self.assertEqual(document.meta.get("og:url"), expected_url)
-                self.assertEqual(document.meta.get("og:type"), "website")
-                self.assertEqual(document.meta.get("og:site_name"), "Ingyu Yoo")
-                self.assertTrue(document.meta.get("og:title"))
-                self.assertTrue(document.meta.get("og:description"))
+                self.assert_page_metadata(filename, PAGES[filename])
 
     def test_homepage_identity(self):
         nodes = json_ld_nodes(parse_document("index.html"))
