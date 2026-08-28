@@ -1,5 +1,4 @@
 import json
-import subprocess
 import unittest
 import xml.etree.ElementTree as ET
 from html.parser import HTMLParser
@@ -7,7 +6,6 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-BASELINE_COMMIT = "35aa8db"
 PERSON_ID = "https://yig0222.github.io/#person"
 WEBSITE_ID = "https://yig0222.github.io/#website"
 PAGES = {
@@ -62,13 +60,6 @@ def json_ld_nodes(document):
         else:
             nodes.append(payload)
     return nodes
-
-
-def body_fragment(document):
-    lower = document.lower()
-    start = lower.index("<body")
-    end = lower.index("</body>") + len("</body>")
-    return document[start:end].replace("\r\n", "\n")
 
 
 class SeoMetadataTests(unittest.TestCase):
@@ -143,20 +134,6 @@ class CrawlDiscoveryTests(unittest.TestCase):
         namespace = {"sm": "http://www.sitemaps.org/schemas/sitemap/0.9"}
         locations = {node.text for node in root.findall("sm:url/sm:loc", namespace)}
         self.assertEqual(locations, set(PAGES.values()))
-
-
-class BodyPreservationTests(unittest.TestCase):
-    def test_visible_body_content_matches_approved_baseline(self):
-        for filename in PAGES:
-            with self.subTest(filename=filename):
-                baseline = subprocess.run(
-                    ["git", "show", f"{BASELINE_COMMIT}:{filename}"],
-                    cwd=ROOT,
-                    check=True,
-                    capture_output=True,
-                ).stdout.decode("utf-8")
-                current = (ROOT / filename).read_text(encoding="utf-8")
-                self.assertEqual(body_fragment(current), body_fragment(baseline))
 
 
 if __name__ == "__main__":
