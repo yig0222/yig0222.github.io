@@ -75,6 +75,8 @@ ul.plain li:first-child{border-top:none}
 .tag{display:inline-block;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line-strong);border-radius:2px;padding:1px 7px;margin-right:8px;vertical-align:1px;white-space:nowrap}
 .venue{color:var(--muted)}
 .subhead{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);font-weight:700;margin:26px 0 10px}
+.grouplabel{font-size:12px;letter-spacing:.06em;color:var(--muted);font-weight:600;margin:16px 0 2px;padding-left:10px;border-left:2px solid var(--line-strong)}
+.subhead+.grouplabel{margin-top:6px}
 .scholar{margin:14px 0 0;font-size:14px;color:var(--muted)}
 .scholar a{color:var(--muted)}
 .scholar a:hover{color:var(--ink)}
