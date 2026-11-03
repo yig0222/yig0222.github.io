@@ -36,7 +36,7 @@ header.nav{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);bac
 .hero .meta a:hover{color:var(--ink)}
 
 /* ---- typography ---- */
-h2.head{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700;margin:0 0 18px;display:flex;align-items:center;gap:14px}
+h2.head{font-size:16.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700;margin:0 0 18px;display:flex;align-items:center;gap:14px}
 h2.head::after{content:"";flex:1;height:1px;background:var(--line)}
 h3{font-size:17px;margin:0 0 2px;color:var(--ink);font-weight:600;letter-spacing:.005em}
 p{margin:0 0 14px}
@@ -91,7 +91,7 @@ ul.sub li::before{content:"·";position:absolute;left:4px;color:var(--faint)}
 
 /* ---- TA section: section title with right-aligned date on the same line ---- */
 .head-row{display:flex;align-items:center;gap:14px;margin:0 0 18px}
-.head-row .t{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700;white-space:nowrap}
+.head-row .t{font-size:16.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700;white-space:nowrap}
 .head-row .rule{flex:1;height:1px;background:var(--line)}
 .head-row .d{color:var(--faint);font-size:13px;white-space:nowrap;font-variant-numeric:tabular-nums}
 .ta-do{display:block;color:var(--muted);font-size:14px;line-height:1.55;margin-top:3px}
