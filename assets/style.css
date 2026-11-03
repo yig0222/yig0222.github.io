@@ -1,6 +1,6 @@
 /* ===== Ingyu Yoo — personal site. Achromatic, quiet, editorial. ===== */
 :root{
-  --ink:#1a1a1a; --body:#2e2e2e; --muted:#6b6b6b; --faint:#8c8c8c;
+  --ink:#000000; --body:#000000; --muted:#000000; --faint:#000000;
   --line:#e4e4e4; --line-strong:#cfcfcf; --bg:#ffffff; --bg-alt:#f7f7f6;
   --max:760px; --gutter:28px;
   --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;
